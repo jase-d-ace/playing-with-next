@@ -12,15 +12,17 @@ class Page extends Component {
     }
   }
 
+  getInitialProps = async () => {
+    const res = await fetch('https://baconipsum.com/api/?type=meat-and-filler');
+    const data = await res.json();
+    this.setState({
+      apiDataLoaded: true,
+      apiData: data
+    })
+  }
+
   componentDidMount() {
-    fetch('https://baconipsum.com/api/?type=meat-and-filler')
-    .then( res => res.json())
-    .then( jsonRes => {
-      this.setState({ apiDataLoaded: true, apiData: jsonRes })
-    })
-    .catch( err => {
-        console.log(err)
-    })
+    this.getInitialProps();
   }
 
   render() {
