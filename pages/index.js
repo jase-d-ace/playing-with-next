@@ -1,14 +1,5 @@
-import Link from 'next/link';
 import Layout from './layout';
-
-
-const PostLink = props => (
-  <li>
-    <Link href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
-    </Link>
-  </li>
-);
+import PostLink from './post-link';
 
 export default () => (
   <Layout>
