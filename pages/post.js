@@ -2,6 +2,7 @@ import { withRouter } from 'next/router';
 import React, { Component } from 'react';
 import Layout from './layout';
 import Content from './content';
+import '../static/style.css'
 
 class Page extends Component {
   constructor() {
